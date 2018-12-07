@@ -3,7 +3,8 @@
   "description": "Basic functionality for block.io",
   "license": "MIT",
   "homepage": "https://github.com/ws-cv-ua/yii2-blockio-dogecoin",
-  "stability": "stable",
+  "stability":"stable",
+  "minimum-stability":"stable",
   "authors": [
     {
       "name": "Web-Studio.cv.ua",
