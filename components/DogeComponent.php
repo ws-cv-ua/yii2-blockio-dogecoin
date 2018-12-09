@@ -118,6 +118,9 @@ class DogeComponent extends Component
      */
     public function pay($params = [])
     {
-
+        return $this->blockIo->withdraw([
+            'amounts' => implode(',', array_keys($params)),
+            'to_addresses' => implode(',', array_values($params)),
+        ]);
     }
 }

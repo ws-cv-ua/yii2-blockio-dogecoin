@@ -1,6 +1,9 @@
-#Block.io pack
+![alt text](http://web-studio.cv.ua/img/logo-dark.png "Web-Studio.cv.ua")
 
-##1. Установка:
+# Компонент для получение и отправки платежей с помощью Block.io
+Разрабатывался для Doge, откуда и получил назву. Но можно работать и с Bitcoin и с Litecoin
+
+## 1. Установка:
 ```shell
 composer require ws-cv-ua/yii2-blockio-dogecoin
 ```
@@ -17,7 +20,7 @@ composer require ws-cv-ua/yii2-blockio-dogecoin
 ]
 ```
 
-##2. Получение оплат
+## 2. Получение оплат
 Для получение оплаты нам нужно создать адрес и задать WebHook для него (оповещеение от сервера о получении средств). Для этого в компоненте DogeComponent есть методы:
 1. generateNewAddress($label). Можно задать уникальную метку для адреса (отобр. на Block.io), можно не задавать.
 2. createWebHook($params). Пример:
@@ -30,7 +33,7 @@ Yii::$app->doge->createWebHook([
 ```
 3. generateSmartAddress($label). Метод объединяет 1 и 2 методы для удобства.
 
-###Пример ответа сервера (WebHook):
+### Пример ответа сервера (WebHook):
 ```json
 {
     "notification_id": "019e3ebf656bf837a45f437a",
@@ -50,7 +53,7 @@ Yii::$app->doge->createWebHook([
 }
 ```
 
-###Начальный шаблон контролера:
+### Начальный шаблон контролера:
 ```php
 class StatusController extends \yii\web\Controller
 {
